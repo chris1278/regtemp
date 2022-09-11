@@ -54,10 +54,10 @@
 			<dd><input type="email" tabindex="4" name="email" id="email" size="25" maxlength="100" value="{{ EMAIL }}" class="inputbox autowidth" title="{{ lang('EMAIL_ADDRESS') }}" autocomplete="off" /></dd>
 		</dl>
 
-	{% EVENT EVENT ucp_register_credentials_after %}
+	{% EVENT ucp_register_credentials_after %}
 	<hr />
 
-	{% EVENT EVENT ucp_register_options_before %}
+	{% EVENT ucp_register_options_before %}
 	{% if S_LANG_OPTIONS %}
 	<dl>
 		<dt><label for="lang">{{ lang('LANGUAGE') ~ lang('COLON') }}</label></dt>
