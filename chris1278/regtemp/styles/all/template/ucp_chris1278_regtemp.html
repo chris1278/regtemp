@@ -1,4 +1,4 @@
-<!-- INCLUDE overall_header.html -->
+{% include 'overall_header.html' %}
 <script>
 	/**
 	* Change language
@@ -35,7 +35,7 @@
 		<dl><dd><strong>{{ lang('REG_COND') }}</strong></dd></dl>
 	{% endif %}
 
-	<!-- EVENT ucp_register_credentials_before -->
+	{% EVENT ucp_register_credentials_before %}
 	<dl><dd><strong>{{ lang('ITEMS_REQUIRED') }}</strong></dd></dl>
 	<dl>
 		<dt><label for="username">{{ lang('USERNAME') ~ lang('COLON') }} *</label><br /><span>{{ lang('USERNAME_EXPLAIN') }}</span></dt>
@@ -54,10 +54,10 @@
 			<dd><input type="email" tabindex="4" name="email" id="email" size="25" maxlength="100" value="{{ EMAIL }}" class="inputbox autowidth" title="{{ lang('EMAIL_ADDRESS') }}" autocomplete="off" /></dd>
 		</dl>
 
-	<!-- EVENT ucp_register_credentials_after -->
+	{% EVENT EVENT ucp_register_credentials_after %}
 	<hr />
 
-	<!-- EVENT ucp_register_options_before -->
+	{% EVENT EVENT ucp_register_options_before %}
 	{% if S_LANG_OPTIONS %}
 	<dl>
 		<dt><label for="lang">{{ lang('LANGUAGE') ~ lang('COLON') }}</label></dt>
@@ -68,12 +68,12 @@
 	{% include 'timezone_option.html' %}
 	
 
-	<!-- EVENT ucp_register_profile_fields_before -->
+	{% EVENT ucp_register_profile_fields_before %}
 	
 	<!-- IF .profile_fields -->
 		<!-- BEGIN profile_fields -->
 			<dl>
-				<dt><label{% if profile_fields.FIELD_ID %} for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}{{ lang('COLON') }}{% if profile_fields.S_REQUIRED %} *{% endif %}</label>
+				<dt><label{% if profile_fields.FIELD_ID %} for="{profile_fields.FIELD_ID}"{% endif %}>{profile_fields.LANG_NAME}{{ lang('COLON') }}{% if profile_fields.S_REQUIRED %} *{% endif %}</label>
 				{% if profile_fields.LANG_EXPLAIN %}<br /><span>{profile_fields.LANG_EXPLAIN}</span>{% endif %}
 				{% if profile_fields.ERROR %}<br /><span class="error">{profile_fields.ERROR}</span>{% endif %}</dt>
 				<dd>{profile_fields.FIELD}</dd>
@@ -81,7 +81,7 @@
 		<!-- END profile_fields -->
 	<!-- ENDIF -->
 
-	<!-- EVENT ucp_register_profile_fields_after -->
+	{% EVENT ucp_register_profile_fields_after %}
 	</fieldset>
 	</div>
 </div>
@@ -101,7 +101,7 @@
 </div>
 {% endif %}
 
-<!-- EVENT ucp_register_buttons_before -->
+{% EVENT ucp_register_buttons_before %}
 
 <div class="panel">
 	<div class="inner">
@@ -116,4 +116,4 @@
 </div>
 </form>
 
-<!-- INCLUDE overall_footer.html -->
+{% include 'overall_footer.html' %}
