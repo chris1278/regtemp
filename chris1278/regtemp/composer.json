@@ -1,0 +1,35 @@
+{
+    "name": "chris1278/regtemp",
+    "type": "phpbb-extension",
+    "description": "This extension replaces the original registration page template with a customized one",
+    "homepage": "https://christian-esch.de",
+    "version": "1.0.0",
+    "time": "2022-09-11",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Chris1278",
+            "email": "smilie-man@gmx.de",
+            "homepage": "https://christian-esch.de",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0,<9.0.0",
+        "phpbb/phpbb": ">=3.2.10,<3.4.0@dev",
+        "composer/installers": "~1.0.0"
+    },
+    "extra": {
+        "display-name": "Customized registration template",
+        "lang-min-ver": "1.0.0",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.2.10,<3.4.0@dev"
+        },
+		"version-check": {
+			"host": "raw.githubusercontent.com",
+			"directory": "/chris1278/regtemp/main",
+			"filename": "regtemp.json",
+			"ssl": true
+		}
+    }
+}

@@ -1,0 +1,7 @@
+services:
+    chris1278.regtemp.listener:
+        class: chris1278\regtemp\event\main_listener
+        arguments:
+            - '@template'
+        tags:
+            - { name: event.listener }
